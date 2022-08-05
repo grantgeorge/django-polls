@@ -1,4 +1,4 @@
-DJANGO_SECRET_KEY=abc123
+DJANGO_SECRET_KEY=h4vnr8&98+49p#q4*ixm^ty1j@(*-+1b0lkygqd*kxc&g!u^g5
 DEBUG=True
 DJANGO_ALLOWED_HOSTS=143.198.68.23
 DATABASE_ENGINE=postgresql_psycopg2
