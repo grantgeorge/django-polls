@@ -1,7 +1,7 @@
 # pull official base image
 FROM python:3.9.12
 
-ADD django-polls/requirements.txt /app/requirements.txt
+ADD ./requirements.txt /app/requirements.txt
 
 RUN set -ex \
   && apk add --no-cache --virtual .build-deps postgresql-dev build-base \
@@ -16,12 +16,10 @@ RUN set -ex \
   && apk add --virtual rundeps $runDeps \
   && apk del .build-deps
 
-ADD django-polls /app
+ADD . /app
 WORKDIR /app
 
 ENV VIRTUAL_ENV /env
 ENV PATH /env/bin:$PATH
 
 EXPOSE 8000
-
-CMD ["gunicorn", "--bind", ":8000", "--workers", "3", "mysite.wsgi:application"]
